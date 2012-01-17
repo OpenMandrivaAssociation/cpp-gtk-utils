@@ -65,6 +65,7 @@ rm -rf %{buildroot}/%{_libdir}/libcxx-gtk-utils-3-2.0.a
 
 %files -n %{libname}
 %{_libdir}/libcxx-gtk-utils-3-2.0.so.0.0.%{minor}
+%{_libdir}/libcxx-gtk-utils-3-2.0.so.0
 
 %files -n %{develname}
 %{_includedir}/%{name}-3-2.0/%{name}/*.h
@@ -77,4 +78,3 @@ rm -rf %{buildroot}/%{_libdir}/libcxx-gtk-utils-3-2.0.a
 %{_docdir}/%{name}/2.0/COPYING
 %{_docdir}/%{name}/2.0/PORTING*
 %{_libdir}/libcxx-gtk-utils-3-2.0.so
-%{_libdir}/libcxx-gtk-utils-3-2.0.so.0
