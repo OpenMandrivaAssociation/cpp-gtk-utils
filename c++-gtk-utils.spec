@@ -1,71 +1,63 @@
 %define major 0
-%define minor 2
 %define libname %mklibname c++-gtk-utils %{major}
 %define develname %mklibname c++-gtk-utils -d
 
-Summary:	GTK+-based ISO image editor
+Summary:	A library for programming GTK+ programs using C++
 Name:		c++-gtk-utils
-Version:	2.0.4
+Version:	2.0.12
 Release:	1
-Source0:	http://downloads.sourceforge.net/project/cxx-gtk-utils/cxx-gtk-utils/2.0.4/%{name}-%{version}.tar.gz
 License:	GPLv2
 Group:		System/Libraries
 URL:		http://cxx-gtk-utils.sourceforge.net
-BuildRequires:	gtk+3.0-devel	
+Source0:	http://downloads.sourceforge.net/project/cxx-gtk-utils/cxx-gtk-utils/2.0.4/%{name}-%{version}.tar.gz
+BuildRequires:	pkgconfig(cairo)
+BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(pango)
+BuildRequires:	pkgconfig(pangocairo)
 
 %description
-c++-gtk-utils is a lightweight library containing 
-a number of classes and functions for programming 
-GTK+ programs using C++ in POSIX (unix-like) environments, 
-where the user does not want to use a full-on wrapper such
-as gtkmm or wxWidgets, or is concerned about exception safety 
-or thread safety of the wrapper and their documentation.
-It is parallel installable for both GTK+2 and GTK+3. 
-
-
+c++-gtk-utils is a lightweight library containing a number of classes
+and functions for programming GTK+ programs using C++ in POSIX (unix-like)
+environments, where the user does not want to use a full-on wrapper such
+as gtkmm or wxWidgets, or is concerned about exception safety or thread
+safety of the wrapper and their documentation. It is parallel installable
+for both GTK+2 and GTK+3.
 
 %package -n	%{libname}
-Summary:	A library containing a number of classes and functions for programming GTK+ programs using C++
+Summary:	A library for programming GTK+ programs using C++
 Group:		System/Libraries
-Provides:	%{name} = %{version}
 
 %description -n %{libname}
-c++-gtk-utils is a lightweight library containing
-a number of classes and functions for programming
-GTK+ programs using C++ in POSIX (unix-like) environments,
-where the user does not want to use a full-on wrapper such
-as gtkmm or wxWidgets, or is concerned about exception safety
-or thread safety of the wrapper and their documentation.
-It is parallel installable for both GTK+2 and GTK+3.
-
+c++-gtk-utils is a lightweight library containing a number of classes
+and functions for programming GTK+ programs using C++ in POSIX (unix-like)
+environments, where the user does not want to use a full-on wrapper such
+as gtkmm or wxWidgets, or is concerned about exception safety or thread
+safety of the wrapper and their documentation. It is parallel installable
+for both GTK+2 and GTK+3.
 
 %package -n	%{develname}
 Summary:	Development files for %{name}
 Group:		Development/C
-Requires:	%{libname} = %{version}
+Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n %{develname}
-Development files for %{name}
-
+Development files for %{name}.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
-./configure --prefix=%{_prefix} --exec-prefix=%{_prefix} --bindir=%{_bindir} --sbindir=%{_sbindir} --sysconfdir=%{_sysconfdir} --datadir=%{_datadir} --includedir=%{_includedir} --libdir=%{_libdir}  --mandir=%{_mandir}
+%configure2_5x --disable-static
 
-
-%make
+%make LIBS="-lpthread"
 
 %install
 %makeinstall_std
-rm -rf %{buildroot}/%{_libdir}/libcxx-gtk-utils-3-2.0.a
-
 
 %files -n %{libname}
-%{_libdir}/libcxx-gtk-utils-3-2.0.so.0.0.%{minor}
-%{_libdir}/libcxx-gtk-utils-3-2.0.so.0
+%{_libdir}/libcxx-gtk-utils-3-2.0.so.%{major}*
 
 %files -n %{develname}
 %{_includedir}/%{name}-3-2.0/%{name}/*.h
@@ -78,3 +70,4 @@ rm -rf %{buildroot}/%{_libdir}/libcxx-gtk-utils-3-2.0.a
 %{_docdir}/%{name}/2.0/COPYING
 %{_docdir}/%{name}/2.0/PORTING*
 %{_libdir}/libcxx-gtk-utils-3-2.0.so
+
