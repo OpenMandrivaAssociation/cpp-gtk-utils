@@ -57,17 +57,17 @@ Development files for %{name}.
 %makeinstall_std
 
 %files -n %{libname}
-%{_libdir}/libcxx-gtk-utils-3-2.0.so.%{major}*
+%{_libdir}/libcxx-gtk-utils-3-2.2.so.%{major}*
 
 %files -n %{develname}
-%{_includedir}/%{name}-3-2.0/%{name}/*.h
-%{_includedir}/%{name}-3-2.0/%{name}/*.tpp
+%{_includedir}/%{name}-3-2.2/%{name}/*.h
+%{_includedir}/%{name}-3-2.2/%{name}/*.tpp
 %{_libdir}/pkgconfig/*.pc
-%{_docdir}/%{name}/2.0/html/*
-%{_docdir}/%{name}/2.0/README
-%{_docdir}/%{name}/2.0/NEWS
-%{_docdir}/%{name}/2.0/BUGS
-%{_docdir}/%{name}/2.0/COPYING
-%{_docdir}/%{name}/2.0/PORTING*
-%{_libdir}/libcxx-gtk-utils-3-2.0.so
+%{_docdir}/%{name}/2.2/html/*
+%{_docdir}/%{name}/2.2/README
+%{_docdir}/%{name}/2.2/NEWS
+%{_docdir}/%{name}/2.2/BUGS
+%{_docdir}/%{name}/2.2/COPYING
+%{_docdir}/%{name}/2.2/PORTING*
+%{_libdir}/libcxx-gtk-utils-3-2.2.so
 
