@@ -4,12 +4,12 @@
 
 Summary:	A library for programming GTK+ programs using C++
 Name:		c++-gtk-utils
-Version:	2.0.12
+Version:	2.2.6
 Release:	1
 License:	GPLv2
 Group:		System/Libraries
 URL:		http://cxx-gtk-utils.sourceforge.net
-Source0:	http://downloads.sourceforge.net/project/cxx-gtk-utils/cxx-gtk-utils/2.0.4/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/cxx-gtk-utils/cxx-gtk-utils/2.2.6/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
