@@ -10,6 +10,8 @@ License:	GPLv2
 Group:		System/Libraries
 URL:		http://cxx-gtk-utils.sourceforge.net
 Source0:	http://downloads.sourceforge.net/project/cxx-gtk-utils/cxx-gtk-utils/2.2.6/%{name}-%{version}.tar.gz
+Source100:      %{name}.rpmlintrc
+
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
@@ -39,7 +41,7 @@ for both GTK+2 and GTK+3.
 %package -n	%{develname}
 Summary:	Development files for %{name}
 Group:		Development/C
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n %{develname}
@@ -57,6 +59,7 @@ Development files for %{name}.
 %makeinstall_std
 
 %files -n %{libname}
+%doc ABOUT-NLS AUTHORS ChangeLog COPYING
 %{_libdir}/libcxx-gtk-utils-3-2.2.so.%{major}*
 
 %files -n %{develname}
