@@ -5,7 +5,7 @@
 Summary:	A library for programming GTK+ programs using C++
 Name:		c++-gtk-utils
 Version:	2.0.12
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		System/Libraries
 URL:		http://cxx-gtk-utils.sourceforge.net
