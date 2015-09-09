@@ -1,0 +1,4 @@
+addFilter("E: incoherent-version-in-name")
+# Requires:	%{libname} = %{EVRD}
+# for devel package should do it.
+addFilter("E: no-dependency-on")
