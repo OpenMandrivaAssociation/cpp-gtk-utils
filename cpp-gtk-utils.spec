@@ -4,7 +4,7 @@
 
 Summary:	A library for programming GTK+ programs using C++
 Name:		c++-gtk-utils
-Version:	2.2.11
+Version:	2.2.19
 Release:	1
 License:	GPLv2
 Group:		System/Libraries
@@ -51,12 +51,12 @@ Development files for %{name}.
 %setup -q
 
 %build
-%configure2_5x --disable-static
+%configure --disable-static
 
-%make LIBS="-lpthread"
+%make_build LIBS="-lpthread"
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %doc ABOUT-NLS AUTHORS ChangeLog COPYING
