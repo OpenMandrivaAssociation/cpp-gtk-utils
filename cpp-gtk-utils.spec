@@ -4,7 +4,7 @@
 
 Summary:	A library for programming GTK+ programs using C++
 Name:		c++-gtk-utils
-Version:	2.2.19
+Version:	2.2.20
 Release:	1
 License:	GPLv2
 Group:		System/Libraries
