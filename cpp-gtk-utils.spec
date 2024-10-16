@@ -8,7 +8,7 @@ Version:	2.2.20
 Release:	1
 License:	GPLv2
 Group:		System/Libraries
-URL:		http://cxx-gtk-utils.sourceforge.net
+URL:		https://cxx-gtk-utils.sourceforge.net
 Source0:	http://downloads.sourceforge.net/project/cxx-gtk-utils/cxx-gtk-utils/2.2.6/%{name}-%{version}.tar.gz
 Source100:      %{name}.rpmlintrc
 
